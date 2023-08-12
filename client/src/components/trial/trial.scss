@@ -1,0 +1,26 @@
+.trial {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .tContainer {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    width: 60%;
+    height: 50%;
+  }
+
+  .tClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
