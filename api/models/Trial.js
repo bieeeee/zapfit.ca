@@ -2,7 +2,11 @@ import mongoose from 'mongoose';
 
 const TrialSchema = new mongoose.Schema(
   {
-    name: {
+    firstname: {
+      type: String,
+      required: true,
+    },
+    lastname: {
       type: String,
       required: true,
     },
