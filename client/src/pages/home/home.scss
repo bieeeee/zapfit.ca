@@ -6,6 +6,7 @@
     height: calc(100vh - 50px);
     position: relative;
     top: 50px;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
