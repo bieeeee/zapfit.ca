@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -14,6 +16,14 @@ const connect = async () => {
   }
 }
 
+mongoose.connection.on("disconnected", () => {
+  console.log("mongoDB disconnected")
+})
+
+
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());
 
 app.listen(8800, () => {
   connect();
