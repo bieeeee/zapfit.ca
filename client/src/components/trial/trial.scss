@@ -15,6 +15,7 @@
     position: relative;
     width: 60%;
     height: 50%;
+    display: flex;
   }
 
   .tClose {
@@ -22,5 +23,32 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
+  }
+
+  .left {
+    background-color: lightblue;
+    width: 70%;
+  }
+
+  .right {
+    width: 100%;
+    padding: 50px;
+    background-color: lightcoral;
+
+    .trialInfo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+
+    .trialInput {
+      border: none;
+      background-color: lightgray;
+      padding: 9px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
   }
 }
