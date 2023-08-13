@@ -1,5 +1,6 @@
 import About from '../../components/about/About'
 import Benefit from '../../components/benefit/Benefit'
+import Contact from '../../components/contact/Contact'
 import Faq from '../../components/faq/Faq'
 import Footer from '../../components/footer/Footer'
 import Header from '../../components/header/Header'
@@ -15,6 +16,7 @@ function Home() {
         <About />
         <Benefit />
         <Faq />
+        <Contact />
         <Footer />
       </div>
     </div>
