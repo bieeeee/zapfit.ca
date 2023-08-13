@@ -32,12 +32,11 @@ function Navbar() {
         </div>
         {user ?
           <div className="navItems">
-            <span>Hello, {user.username}</span>
+            <span>{user.username}</span>
             <button onClick={handleLogout} className="navButton">Logout</button>
           </div>
           :
           <div className="navItems">
-            <button className="navButton">Register</button>
             <button onClick={handleLogin} className="navButton">Login</button>
           </div>
         }
