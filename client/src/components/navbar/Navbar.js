@@ -26,9 +26,7 @@ function Navbar() {
         <div className="links">
           <a href="#about">About</a>
           <a href="#faq">FAQ</a>
-          <Link to="/contact" style={{ color: "inherit", textDecoration: "none" }}>
-            <span className="contact">Contact</span>
-          </Link>
+          <a href="#contact">Contact</a>
         </div>
         {user ?
           <div className="navItems">
