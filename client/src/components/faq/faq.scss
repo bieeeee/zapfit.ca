@@ -1,0 +1,32 @@
+.faq {
+  background-color: lightsteelblue;
+  display: flex;
+  justify-content: center;
+
+  .fContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .accordion {
+      background-color: transparent;
+      width: 80%;
+      margin-bottom: 10px;
+      box-shadow: none;
+      border: none;
+      .sum {
+        font-size: 20px;
+      }
+    }
+
+    .accordion::before {
+      opacity: 0;
+    }
+  }
+}
