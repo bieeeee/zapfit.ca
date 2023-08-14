@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
+
 function Contact() {
   const form = useRef();
   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -49,10 +50,10 @@ function Contact() {
               <input type="text" name="user_name" placeholder="Name" />
             </div>
             <div className='formContent'>
-              <input type="email" name="user_email" placeholder="E-mail"  />
+              <input type="email" name="user_email" placeholder="E-mail" />
             </div>
             <div className='formContent'>
-              <input type="number" name="user_number" placeholder="Phone number"  />
+              <input type="number" name="user_number" placeholder="Phone number" />
             </div>
             <div className='formContent'>
               <textarea name="message" placeholder="Message" />
@@ -60,6 +61,9 @@ function Contact() {
             <input type="submit" value="Send" className='button' />
           </form>
         </div>
+      </div>
+      <div  className='footer'>
+        <p>Copyright © 2023 Zapfit - All Rights Reserved.</p>
       </div>
     </div>
   )
