@@ -1,15 +1,18 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './navbar.scss';
 import { AuthContext } from '../../context/AuthContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import logo from '../../assets/logo.png';
+
 
 function Navbar() {
   const { user, dispatch } = useContext(AuthContext);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
-    dispatch({type: "LOGOUT"});
+    dispatch({ type: "LOGOUT" });
   }
 
   const handleLogin = (e) => {
@@ -17,27 +20,34 @@ function Navbar() {
     navigate("/login");
   }
 
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  }
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${drawerOpen ? 'drawer-open' : ''}`}>
       <div className="navContainer">
-        <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-          <span className="logo">Zapfit</span>
-        </Link>
-        <div className="links">
-          <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+        <a href="/">
+          <img src={logo} alt="logo" className='logo' />
+        </a>
+        <div className={`links ${drawerOpen ? 'drawer-open' : ''}`}>
+          <a href="#about" onClick={toggleDrawer}>About</a>
+          <a href="#faq" onClick={toggleDrawer}>FAQ</a>
+          <a href="#contact" onClick={toggleDrawer}>Contact</a>
+          {user ?
+            <>
+              <span>{user.username}</span>
+              <a onClick={handleLogout} className="navButton">Logout</a>
+            </>
+            :
+            <a onClick={handleLogin} className="navButton">Login</a>
+          }
         </div>
-        {user ?
-          <div className="navItems">
-            <span>{user.username}</span>
-            <button onClick={handleLogout} className="navButton">Logout</button>
-          </div>
-          :
-          <div className="navItems">
-            <button onClick={handleLogin} className="navButton">Login</button>
-          </div>
-        }
+        <div className="drawer-icon" onClick={toggleDrawer}>
+          <div className={`bar ${drawerOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${drawerOpen ? 'open' : ''}`}></div>
+          <div className={`bar ${drawerOpen ? 'open' : ''}`}></div>
+        </div>
       </div>
     </div>
   )
