@@ -1,8 +1,15 @@
 .header {
   // background-color: lightsalmon;
-  height: calc(100vh - 200px) !important;
+  // height: calc(100vh - 200px) !important;
   display: flex;
   align-items: center;
+
+  h1 {
+    font-weight: 800;
+    color: #d3fb04;
+    text-align: center;
+    font-size: 2.5rem;
+  }
 
   video {
     margin: 0;
@@ -38,5 +45,17 @@
     padding: 15px;
     border: none;
     cursor: pointer;
+
+    color: black;
+    background-color: #d3fb04;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 50px;
+
+    &:hover {
+      background-color: black;
+      color: #d3fb04;
+      border: 1px solid #d3fb04;
+    }
   }
 }
