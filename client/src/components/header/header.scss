@@ -29,6 +29,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    text-align: center;
   }
 
   .overlay {
@@ -56,6 +57,20 @@
       background-color: black;
       color: #d3fb04;
       border: 1px solid #d3fb04;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      padding-right: 30px;
+      padding-left: 30px;
+      text-align: center;
     }
   }
 }
