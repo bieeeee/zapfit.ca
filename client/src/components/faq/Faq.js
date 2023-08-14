@@ -10,65 +10,65 @@ function Faq() {
   return (
     <div className='faq' id='faq'>
       <div className="fContainer">
-        <h1>Frequently Asked Questions</h1>
+        <h1>FREQUENTLY ASKED QUESTIONS</h1>
         <Accordion className='accordion'>
           <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+            expandIcon={<FontAwesomeIcon icon={faAngleDown} style={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="sum"
           >
-            <h4>I'm a complete beginner when it comes to excercise. Will this work for me?</h4>
+            <p>I'm a complete beginner when it comes to excercise. Will this work for me?</p>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <p>
               Yes! It is a great way for you to learn about exercise and fitness while experiencing something new. You will have someone knowledgeable teaching and guiding you along the way in your fitness journey.
-            </Typography>
+            </p>
           </AccordionDetails>
         </Accordion>
         <Accordion className='accordion'>
           <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+            expandIcon={<FontAwesomeIcon icon={faAngleDown} style={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="sum"
           >
-            <h4>Do I need to join a gym?</h4>
+            <p>Do I need to join a gym?</p>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <p>
               No! ZAPFIT is a mobile personal training service, meaning that I come to you! Whether it is in the comfort of your own home or a nearby park, you can train with me anywhere at anytime. Equipment such as weights, an agility course set, skipping ropes, benches, pull up and dip bars, resistance bands, yoga mats, etc., will be provided at no extra cost.
-            </Typography>
+            </p>
           </AccordionDetails>
         </Accordion>
         <Accordion className='accordion'>
           <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+            expandIcon={<FontAwesomeIcon icon={faAngleDown} style={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="sum"
           >
-            <h4>What kind of results can I expect?</h4>
+            <p>What kind of results can I expect?</p>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <p>
               In as little a month, coupled with good dieting, there will be a noticeable decrease in body fat as well as an increase in cardiovascular health and muscle mass.
-            </Typography>
+            </p>
           </AccordionDetails>
         </Accordion>
         <Accordion className='accordion'>
           <AccordionSummary
-            expandIcon={<FontAwesomeIcon icon={faAngleDown} />}
+            expandIcon={<FontAwesomeIcon icon={faAngleDown} style={{ color: "white" }} />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="sum"
           >
-            <h4>Is this program suitable for everyone?</h4>
+            <p>Is this program suitable for everyone?</p>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <p>
               Unfortunately, no. Those with pacemakers, fitted defibrillators, type 2 diabetes, and severe multiple sclerosis  cannot do EMS training without putting themselves at risk of injury, but don't worry! I am currently working on designing programs to accommodate those with various medical needs.
-            </Typography>
+            </p>
           </AccordionDetails>
         </Accordion>
       </div>

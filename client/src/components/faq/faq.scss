@@ -1,5 +1,8 @@
+@import "../../global.scss";
+
 .faq {
-  background-color: lightsteelblue;
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
 
@@ -11,22 +14,28 @@
     width: 80%;
 
     h1 {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      color: $mainColor;
+      font-weight: 800;
+      font-size: 2.3rem;
     }
 
     .accordion {
       background-color: transparent;
-      width: 80%;
+      width: 70%;
       margin-bottom: 10px;
       box-shadow: none;
       border: none;
+      color: white;
       .sum {
-        font-size: 20px;
+        font-size: 18px;
+        color: white;
       }
     }
 
     .accordion::before {
-      opacity: 0;
+      opacity: 0.4;
+      background-color: white;
     }
   }
 }
