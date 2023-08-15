@@ -33,7 +33,7 @@ function Trial({ setOpen }) {
     try {
       const response = await axios.post('/trials', formData);
       setIsSubmitted(true);
-      setSubmitMessage("Trial's been successfully booked. We'll send you the email once it's confirmed.");
+      setSubmitMessage("We'll send you the email once it's confirmed.");
     } catch (error) {
       setSubmitMessage(`*All fields must be filled.`);
       console.error(error);
@@ -44,7 +44,12 @@ function Trial({ setOpen }) {
     <div className='trial'>
       <div className="tContainer">
         <FontAwesomeIcon icon={faCircleXmark} className="tClose" onClick={() => setOpen(false)} />
-        {isSubmitted ? <p>{submitMessage}</p>
+        {isSubmitted ?
+          <div className='submitted'>
+            <h3>Thank you, {formData.firstName}!<br /><br />
+              Your trial is successfully booked on {formData.datetime.toString()}.<br /><br />
+              We'll contact you once it's confirmed.</h3>
+          </div>
           : <>
             <div className="left">
               <h1>Your Fitness Journey Starts Here</h1>
@@ -112,7 +117,6 @@ function Trial({ setOpen }) {
                 />
               </div>
               <button className='trialInput trialBtn' onClick={handleSubmit}>Submit</button>
-              <p>{submitMessage}</p>
             </div>
           </>
         }
