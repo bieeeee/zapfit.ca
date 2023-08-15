@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .trial {
   width: 100vw;
   height: 100vh;
@@ -11,11 +13,18 @@
 
   .tContainer {
     background-color: white;
-    padding: 20px;
     position: relative;
-    width: 60%;
-    height: 50%;
+    width: 65%;
+    height: 55%;
     display: flex;
+
+    @include mobile {
+      flex-direction: column;
+      width: 90%;
+      height: 75%;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .tClose {
@@ -26,14 +35,54 @@
   }
 
   .left {
-    background-color: lightblue;
     width: 70%;
+    padding: 40px;
+    background-color: $mainColor;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+
+    h1 {
+      text-align: left;
+      color: black;
+      width: fit-content;
+      font-size: 2.3rem;
+    }
+    p {
+      color: rgb(82, 82, 82);
+      font-size: 13px;
+    }
+
+    @include mobile {
+      background-color: transparent;
+      padding: 10px;
+      justify-content: left;
+      width: 90%;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      h4 {
+        font-size: 13px;
+      }
+      p {
+        font-size: 10px;
+      }
+    }
   }
 
   .right {
     width: 100%;
     padding: 50px;
-    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      padding: 10px;
+      width: 90%;
+    }
 
     .trialInfo {
       display: flex;
@@ -44,11 +93,18 @@
 
     .trialInput {
       border: none;
-      background-color: lightgray;
+      background-color: #F4F4F4;
       padding: 9px;
       font-size: 18px;
       margin-bottom: 10px;
       width: 100%;
+    }
+
+    .trialBtn {
+      background-color: $mainColor;
+      font-weight: 800;
+      width: 50%;
+      margin-top: 5%;
     }
   }
 }

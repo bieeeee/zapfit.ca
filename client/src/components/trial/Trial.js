@@ -47,9 +47,30 @@ function Trial({ setOpen }) {
         {isSubmitted ? <p>{submitMessage}</p>
           : <>
             <div className="left">
-
+              <h1>Your Fitness Journey Starts Here</h1>
+              <h4>In just 30 minutes, our tailored trial session led by certified trainers brings you closer to your fitness goals.</h4>
+              <p>*Opt for added convenience with on-location sessions for a nominal fee.</p>
             </div>
             <div className="right">
+              <div className="trialInfo">
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer
+                    components={['DateTimePicker']}
+                    className="demoContainer trialInput"
+                    sx={{ width: "100%", paddingTop: "none", marginBottom: "10px" }}
+                  >
+                    <DateTimePicker
+                      className='dateTimePicker'
+                      value={dayjs(formData.datetime)}
+                      onChange={(newDateTime) => setFormData((prevData) => ({ ...prevData, dateTime: newDateTime }))}
+                      disablePast
+                      closeOnSelect
+                      minutesStep={15}
+                      ampm={false}
+                    />
+                  </DemoContainer>
+                </LocalizationProvider>
+              </div>
               <div className="trialInfo">
                 <input
                   type="text"
@@ -90,18 +111,7 @@ function Trial({ setOpen }) {
                   value={formData.phone}
                 />
               </div>
-              <div className="trialInfo">
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={['DateTimePicker']} className="demoContainer trialInput">
-                    <DateTimePicker
-                      className='dateTimePicker'
-                      value={dayjs(formData.datetime)}
-                      onChange={(newDateTime) => setFormData((prevData) => ({ ...prevData, dateTime: newDateTime }))}
-                    />
-                  </DemoContainer>
-                </LocalizationProvider>
-              </div>
-              <button className='trialInput' style={{ marginTop: "20px", cursor: "pointer" }} onClick={handleSubmit}>Submit</button>
+              <button className='trialInput trialBtn' onClick={handleSubmit}>Submit</button>
               <p>{submitMessage}</p>
             </div>
           </>
