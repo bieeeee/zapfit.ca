@@ -21,7 +21,7 @@ function Benefit() {
       id: "3",
       img: "./assets/pain.png",
       title: "Safe and Effective Exercise",
-      desc: "EMS bodysuit training is low-impact, which means it puts less stress on the joints than traditional exercise methods. This makes it a great option for people with injuries or other conditions that limit their ability to do high-impact exercise."
+      desc: "EMS bodysuit training is low-impact, which means it puts less stress on the joints than traditional exercise methods. This makes it a great option for people with injuries or other conditions."
     },
     {
       id: "4",

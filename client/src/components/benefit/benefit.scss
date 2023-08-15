@@ -16,18 +16,22 @@
     padding-top: 60px;
 
     &.left {
-      left: 100px;
+      left: 6vw;
       transform: rotateY(180deg);
     }
 
     &.right {
-      right: 100px;
+      right: 6vw;
     }
 
     &.disabled {
       opacity: 0.1;
       cursor: not-allowed;
       pointer-events: none;
+    }
+
+    @include mobile {
+      height: 40px;
     }
   }
 
@@ -39,6 +43,10 @@
     padding-top: 70px;
     position: absolute;
     top: 0;
+
+    @include mobile {
+      font-size: 26px;
+    }
   }
 
   .slider {
@@ -66,20 +74,37 @@
         border: 2.5px solid black;
         box-shadow: 7px 7px 0px -2px RGB(255 255 255);
 
+        @include mobile {
+          flex-direction: column;
+          width: 60vw;
+          height: 90%;
+          align-items: center;
+          justify-content: center;
+        }
+
         .left {
           flex: 4;
           height: 80%;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 10px;
+
           img {
             width: 65%;
+          }
+
+          @include mobile {
+            height: 35%;
+            img {
+              width: 40%;
+            }
           }
         }
 
         .right {
           flex: 8;
-          padding-right: 10px;
+          padding: 10px;
           h2 {
             color: black;
             text-align: left;
@@ -92,6 +117,23 @@
           p {
             font-weight: 500;
             font-size: 18px;
+          }
+
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            h2 {
+              font-size: 18px;
+              // white-space: nowrap;
+              text-align: center;
+              margin-bottom: 10px;
+            }
+
+            p {
+              font-size: 14px;
+              text-align: center;
+            }
           }
         }
       }
