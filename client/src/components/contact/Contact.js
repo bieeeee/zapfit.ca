@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import './contact.scss';
 import emailjs from '@emailjs/browser';
-import profile from '../../assets/profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -35,7 +34,7 @@ function Contact() {
           <h6>*Spaces and time slots are limited.</h6>
           <h6>*Operations are done in Montreal and the Greater Montreal area.</h6>
           <div class="profileContainer">
-            <img src={profile} alt="profile" />
+            <img src='./assets/profile.png' alt="profile" />
             <div>
               <p>Michael Adorante</p>
               <p>Certified Mobile EMS Personal Trainer</p>

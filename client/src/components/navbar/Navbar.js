@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import './navbar.scss';
 import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
-import logo from '../../assets/logo.png';
 
 
 function Navbar() {
@@ -28,7 +27,7 @@ function Navbar() {
     <div className={`navbar ${drawerOpen ? 'drawer-open' : ''}`}>
       <div className="navContainer">
         <a href="/">
-          <img src={logo} alt="logo" className='logo' />
+          <img src='./assets/logo.png' alt="logo" className='logo' />
         </a>
         <div className={`links ${drawerOpen ? 'drawer-open' : ''}`}>
           <a href="#about" onClick={toggleDrawer}>About</a>

@@ -1,5 +1,4 @@
 import './about.scss';
-import suit from '../../assets/suit01.png';
 
 
 function About() {
@@ -11,7 +10,7 @@ function About() {
         <a href="https://youtu.be/qnekQR67B54">Learn more</a>
       </div>
       <div className="suit">
-        <img src={suit} alt="powersuit" />
+        <img src='./assets/suit01.png' alt="powersuit" />
       </div>
 
     </div>

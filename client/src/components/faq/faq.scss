@@ -18,6 +18,7 @@
       color: $mainColor;
       font-weight: 800;
       font-size: 2.3rem;
+      text-align: center;
     }
 
     .accordion {
@@ -27,6 +28,7 @@
       box-shadow: none;
       border: none;
       color: white;
+
       .sum {
         font-size: 18px;
         color: white;
@@ -36,6 +38,22 @@
     .accordion::before {
       opacity: 0.4;
       background-color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .faq {
+    .fContainer {
+      width: 100%;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .accordion {
+        width: 90%;
+      }
     }
   }
 }
