@@ -30,15 +30,22 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  overflow: hidden;
+  animation: slideDown 0.5s ease-in-out forwards;
 
   a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.819);
     font-size: 17px;
   }
+}
 
-  .navButton {
-
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 300px; /* Adjust this value as needed */
   }
 }
 
@@ -84,7 +91,6 @@
   .links,
   .navItems {
     display: none;
-
   }
 
   .drawer-open .links {
@@ -96,7 +102,7 @@
     width: 100%;
     top: 50px;
     left: 0;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     transform: translateY(0);
     gap: 15px;
 
