@@ -8,6 +8,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
 import axios from 'axios';
+import { axiosInstance } from '../../config';
 
 
 function Trial({ setOpen }) {
@@ -31,7 +32,7 @@ function Trial({ setOpen }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('/trials', formData);
+      const response = await axiosInstance.post('/trials', formData);
       setIsSubmitted(true);
       setSubmitMessage("We'll send you the email once it's confirmed.");
     } catch (error) {
