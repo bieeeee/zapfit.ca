@@ -53,7 +53,7 @@ function Trial({ setOpen }) {
           : <>
             <div className="left">
               <h1>Your Fitness Journey Starts Here</h1>
-              <h4>In just 30 minutes, our tailored trial session led by certified trainers brings you closer to your fitness goals.</h4>
+              <h4>In just 30 minutes, our tailored trial session led by a certified trainer brings you closer to your fitness goals.</h4>
               <p>*Opt for added convenience with on-location sessions for a nominal fee.</p>
             </div>
             <div className="right">
