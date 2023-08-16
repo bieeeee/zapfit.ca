@@ -38,6 +38,14 @@
     color: rgba(255, 255, 255, 0.819);
     font-size: 17px;
   }
+
+  .navButton {
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.819);
+    font-size: 17px;
+    cursor: pointer;
+  }
 }
 
 @keyframes slideDown {

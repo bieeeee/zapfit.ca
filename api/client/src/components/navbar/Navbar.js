@@ -36,10 +36,10 @@ function Navbar() {
           {user ?
             <>
               <span>{user.username}</span>
-              <a onClick={handleLogout} className="navButton">Logout</a>
+              <button onClick={handleLogout} className="navButton">Logout</button>
             </>
             :
-            <a onClick={handleLogin} className="navButton">Login</a>
+            <button onClick={handleLogin} className="navButton">Login</button>
           }
         </div>
         <div className="drawer-icon" onClick={toggleDrawer}>
