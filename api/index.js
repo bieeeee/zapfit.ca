@@ -6,6 +6,7 @@ import usersRoute from "./routes/users.js";
 import trialsRoute from "./routes/trials.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 dotenv.config();
