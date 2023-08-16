@@ -8,8 +8,10 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
 
+
 const app = express();
 dotenv.config();
+const __dirname = path.resolve();
 
 const connect = async () => {
   try {
