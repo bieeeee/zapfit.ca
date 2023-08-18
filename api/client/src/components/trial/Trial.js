@@ -19,8 +19,15 @@ function Trial({ setOpen }) {
     lastName: '',
     email: '',
     phoneNumber: '',
-    datetime: new Date(),
+    datetime: null,
   });
+
+  const handleTimeChange = (newTime) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      datetime: newTime.format('DD-MM-YYYY HH:mm'),
+    }));
+  };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -40,6 +47,8 @@ function Trial({ setOpen }) {
       console.error(error);
     }
   };
+
+  console.log(formData)
 
   return (
     <div className='trial'>
@@ -64,11 +73,13 @@ function Trial({ setOpen }) {
                     components={['DateTimePicker']}
                     className="demoContainer trialInput"
                     sx={{ width: "100%", paddingTop: "none", marginBottom: "10px" }}
+                    views={['year', 'month', 'day', 'hours', 'minutes']}
                   >
                     <DateTimePicker
                       className='dateTimePicker'
                       value={dayjs(formData.datetime)}
-                      onChange={(newDateTime) => setFormData((prevData) => ({ ...prevData, dateTime: newDateTime }))}
+                      name="datetime"
+                      onChange={handleTimeChange}
                       disablePast
                       closeOnSelect
                       minutesStep={15}
