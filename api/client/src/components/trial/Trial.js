@@ -1,31 +1,33 @@
 import './trial.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from 'dayjs';
-import axios from 'axios';
 import { axiosInstance } from '../../config';
+import emailjs from '@emailjs/browser';
 
 
 function Trial({ setOpen }) {
-  const [submitMessage, setSubmitMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    phoneNumber: '',
+    phone: '',
     datetime: null,
   });
 
   const handleTimeChange = (newTime) => {
     setFormData((prevData) => ({
       ...prevData,
-      datetime: newTime.format('DD-MM-YYYY HH:mm'),
+      datetime: newTime.toDate(),
     }));
   };
 
@@ -37,18 +39,28 @@ function Trial({ setOpen }) {
     }));
   };
 
+  const templateParams = {
+    from_name: 'Booking Trial',
+    user_name: `${formData.firstName + formData.lastName}`,
+    user_email: `${formData.email}`,
+    user_number: `${formData.phone}`,
+    message: `Date: ${formData.datetime}`
+  };
+
   const handleSubmit = async () => {
     try {
-      const response = await axiosInstance.post('/trials', formData);
+      await axiosInstance.post('/trials', formData);
       setIsSubmitted(true);
-      setSubmitMessage("We'll send you the email once it's confirmed.");
+      emailjs.send(serviceId, templateId, templateParams, publicKey)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status);
+        }, function (error) {
+          console.log('FAILED...', error);
+        });
     } catch (error) {
-      setSubmitMessage(`*All fields must be filled.`);
       console.error(error);
     }
   };
-
-  console.log(formData)
 
   return (
     <div className='trial'>
@@ -57,7 +69,7 @@ function Trial({ setOpen }) {
         {isSubmitted ?
           <div className='submitted'>
             <h3>Thank you, {formData.firstName}!<br /><br />
-              Your trial is successfully booked on {formData.datetime.toString()}.<br /><br />
+              Your trial is successfully booked on {formData.datetime.toDateString()} at {formData.datetime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}.<br /><br />
               We'll contact you once it's confirmed.</h3>
           </div>
           : <>
