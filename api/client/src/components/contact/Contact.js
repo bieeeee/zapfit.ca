@@ -22,6 +22,9 @@ function Contact() {
       }, (error) => {
         console.log(error.text);
       });
+
+    alert("Thank you! I'll get back to you shortly.");
+    window.location.assign('/');
   };
 
 
@@ -61,7 +64,7 @@ function Contact() {
           </form>
         </div>
       </div>
-      <div  className='footer'>
+      <div className='footer'>
         <p>Copyright © 2023 Zapfit - All Rights Reserved.</p>
       </div>
     </div>
