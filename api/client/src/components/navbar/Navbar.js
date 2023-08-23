@@ -1,8 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './navbar.scss';
 import { AuthContext } from '../../context/AuthContext';
 import { useContext, useState } from 'react';
-
 
 function Navbar() {
   const { user, dispatch } = useContext(AuthContext);
@@ -35,7 +34,7 @@ function Navbar() {
           <a href="#contact" onClick={toggleDrawer}>Contact</a>
           {user ?
             <>
-              <span>{user.username}</span>
+              <a href="/manage" onClick={toggleDrawer}>Manage</a>
               <button onClick={handleLogout} className="navButton">Logout</button>
             </>
             :
